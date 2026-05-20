@@ -199,7 +199,7 @@ const faqs = [
     </nav>
 
     <header class="relative bg-slate-900 text-white py-32 px-6 overflow-hidden min-h-[500px] flex items-center">
-      <div class="absolute inset-0 z-0 opacity-40 bg-cover bg-center" style="background-image: url('/images/hero-travel.jpg');"></div>
+      <div class="absolute inset-0 z-0 opacity-40 bg-cover bg-center" style="background-image: url(src={`${import.meta.env.BASE_URL}/images/hero-travel.jpg`});"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-transparent z-10"></div>
       
       <div class="max-w-4xl mx-auto relative z-20 text-center md:text-left w-full">
@@ -242,7 +242,11 @@ const faqs = [
               <div>
                 {/* AREA IMAGE */}
                 <div class="relative overflow-hidden h-52 bg-slate-200 shrink-0">
-                  <img src={tour.image} alt={tour.title} class="w-full h-full object-cover" />
+                  <img 
+  src={`${import.meta.env.BASE_URL}${tour.image}`} 
+  alt={tour.title} 
+  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+/>
                 </div>
 
                 {/* AREA KONTEN UTAMA */}
@@ -324,7 +328,11 @@ const faqs = [
               
               {/* AREA FOTO MOBIL */}
               <div class="relative overflow-hidden h-40 bg-slate-100">
-                <img src={rental.image} alt={rental.unit} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img 
+  src={`${import.meta.env.BASE_URL}${rental.image}`} 
+  alt={rental.unit} 
+  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+/>
               </div>
               
               {/* DETAIL MOBIL */}
