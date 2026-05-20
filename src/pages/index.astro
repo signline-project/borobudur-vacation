@@ -119,32 +119,28 @@ const steps = [
 
 const faqs = [
   {
-    q: "How do I book a Borobudur tour with you?",
-    a: "Simply contact us via WhatsApp or email with your travel date and preferred package. We’ll reply quickly with confirmation and details."
+    question: "How do I book a tour/rental with you?",
+    answer: "You can easily book by clicking our 'Contact Us' button, which connects directly to our WhatsApp. Our team will assist with your reservation and itinerary customizable instantly."
   },
   {
-    q: "Can I combine Borobudur and Prambanan in one day?",
-    a: "Yes, our most popular package is the Borobudur + Prambanan Full-Day Tour. With a private car and driver, it’s very comfortable and efficient."
+    question: "Can I combine Borobudur & Prambanan?",
+    answer: "Absolutely! We offer flexible full-day tours that combine both iconic UNESCO sites with comfortable private cars and expert local drivers."
   },
   {
-    q: "What time does the Borobudur Sunrise Tour start?",
-    a: "Usually around 4:00 AM. We pick you up from your hotel and drive directly to Borobudur to catch the sunrise."
+    question: "What time does the Sunrise Tour start?",
+    answer: "The Borobudur Sunrise Tour typically starts with a hotel pick-up around 3:30 - 4:00 AM to catch the magical morning light from the best spots."
   },
   {
-    q: "Are your drivers English-speaking?",
-    a: "Yes, all our drivers speak English and are experienced with international travelers. They can help with local insights, recommendations, and basic guiding."
+    question: "Are your drivers English-speaking?",
+    answer: "Yes, all our professional drivers are English-speaking local experts dedicated to making your journey comfortable and informative."
   },
   {
-    q: "What type of vehicles do you provide?",
-    a: "Depending on your group size, we provide clean, air-conditioned cars such as Toyota Avanza, Innova, or Hiace for larger groups."
+    question: "What type of vehicles do you provide?",
+    answer: "We offer a modern fleet, including Toyota Avanza, Innova Reborn, Hiace, and premium Toyota Alphard, all well-maintained for your safety."
   },
   {
-    q: "Are entrance tickets included in the price?",
-    a: "Yes, most of our packages already include entrance fees, fuel, tolls, and parking – no hidden costs."
-  },
-  {
-    q: "Is Yogyakarta safe for tourists?",
-    a: "Absolutely. Yogyakarta is one of Indonesia’s safest and friendliest cities. With our local drivers, you can explore with peace of mind."
+    question: "Is Yogyakarta safe for tourists?",
+    answer: "Yes, Yogyakarta is widely known as a friendly and safe city for international tourists. We still advise standard safety precautions, but overall, it's very welcoming."
   }
 ];
 
@@ -313,61 +309,59 @@ const faqs = [
 
       {/* 2. LAYANAN RENTAL MOBIL ANDA SEBELUMNYA TETAP DI SINI */}
 	  <section id="rental" class="scroll-mt-24">
-        <div class="max-w-2xl mx-auto text-center mb-16">
-          <span class="text-blue-600 text-xs font-bold uppercase tracking-wider block mb-2">Transport Services</span>
-          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-            Private Car Rentals
-          </h2>
-          <div class="h-1 w-16 bg-blue-600 mx-auto rounded-full mb-4"></div>
-          <p class="text-slate-500 text-sm md:text-base">
-            Modern, immaculate, and fully air-conditioned vehicles accompanied by professional drivers for a seamless journey.
-          </p>
-        </div>
+  <div class="max-w-2xl mx-auto text-center mb-16">
+    <span class="text-blue-600 text-xs font-bold uppercase tracking-wider block mb-2">Transport Services</span>
+    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+      Private Car Rentals
+    </h2>
+    <div class="h-1 w-16 bg-blue-600 mx-auto rounded-full mb-4"></div>
+    <p class="text-slate-500 text-sm md:text-base">
+      Modern, immaculate, and fully air-conditioned vehicles accompanied by professional drivers for a seamless journey.
+    </p>
+  </div>
 
-        {/* Ubah kelas grid ini agar mendukung hingga 4 kolom di layar besar */}
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
           {rentals.map((rental) => (
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-100 overflow-hidden flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 h-full">
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-100 overflow-hidden flex flex-col transition-all duration-300 group hover:-translate-y-1 h-full">
               
               {/* AREA FOTO MOBIL */}
               <div class="relative overflow-hidden h-40 bg-slate-100">
                 <img 
-  src={`${import.meta.env.BASE_URL}${rental.image}`} 
-  alt={rental.unit} 
-  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-/>
+                  src={`${import.meta.env.BASE_URL}${rental.image}`} 
+                  alt={rental.unit} 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                />
               </div>
               
-              {/* DETAIL MOBIL */}
-              <div class="p-5 flex-grow flex flex-col justify-between">
-                <div>
-                  <h3 class="text-base font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors line-clamp-1">
-                    {rental.unit}
-                  </h3>
-                  <span class="text-[10px] font-semibold text-blue-600 bg-blue-50 py-0.5 px-2 rounded-md inline-block mb-4">
-                    {rental.specs}
-                  </span>
-                  
-                  <div class="border-t border-dashed border-slate-200 pt-3 mt-1">
-                    <span class="text-[9px] text-slate-400 block uppercase font-extrabold tracking-wider">Rental Rates</span>
-                    <div class="flex items-baseline gap-0.5">
-                      <span class="text-lg font-black text-slate-900 tracking-tight">{rental.price}</span>
-                      <span class="text-[11px] text-slate-500 font-medium">{rental.period}</span>
-                    </div>
+              {/* DETAIL MOBIL (Hapus flex-grow agar space atas mengunci padat) */}
+              <div class="p-5 pb-0">
+                <h3 class="text-base font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors line-clamp-1">
+                  {rental.unit}
+                </h3>
+                <span class="text-[10px] font-semibold text-blue-600 bg-blue-50 py-0.5 px-2 rounded-md inline-block mb-1">
+                  {rental.specs}
+                </span>
+              </div>
+              
+              {/* BAGIAN BAWAH: HARGA & TOMBOL AKSI (Ditambah mt-auto untuk menarik space dari atas) */}
+              <div class="px-5 pb-5 mt-auto">
+                <div class="border-t border-dashed border-slate-200 pt-2 mb-4">
+                  <span class="text-[9px] text-slate-400 block uppercase font-extrabold tracking-wider">Rental Rates</span>
+                  <div class="flex items-baseline gap-0.5">
+                    <span class="text-lg font-black text-slate-900 tracking-tight">{rental.price}</span>
+                    <span class="text-[11px] text-slate-500 font-medium">{rental.period}</span>
                   </div>
                 </div>
-              </div>
-              
-              {/* TOMBOL AKSI */}
-              <div class="px-5 pb-5">
+
                 <a href="#contact-cta" class="bg-slate-900 hover:bg-blue-600 text-white font-bold py-2.5 rounded-xl text-center text-xs transition-all block w-full uppercase tracking-wider">
                   Book Car
                 </a>
               </div>
+
             </div>
           ))}
-        </div>
-      </section>
+  </div>
+</section>
       
       {/* 3. WHY CHOOSE US (MENGGUNAKAN DATA BOROBUDUR VACATION) */}
 	  <section id="why-choose-us" class="bg-slate-900 text-white rounded-3xl p-8 md:p-16 relative overflow-hidden shadow-xl">
@@ -426,44 +420,100 @@ const faqs = [
         </div>
       </section>
 
-      <section id="faq" class="scroll-mt-24">
-        <div class="grid lg:grid-cols-12 gap-12 items-start">
+      <section id="faqs" class="py-20 bg-neutral-50">
+  <div class="container mx-auto px-6 max-w-4xl">
+    
+    <div class="text-center mb-12">
+      <p class="text-blue-600 font-bold tracking-wider text-sm uppercase mb-2">Have Questions?</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-neutral-900 mb-4">Frequently Asked Questions</h2>
+      <p class="text-lg text-neutral-600 max-w-2xl mx-auto">Can't find the answer? Contact our local experts instantly via WhatsApp for personalized assistance.</p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <div class="faq-item bg-white rounded-2xl border border-neutral-200/80 shadow-sm overflow-hidden transition-all duration-300">
           
-          {/* KOLOM KIRI: JUDUL & SUBJUDUL */}
-          <div class="lg:col-span-4 space-y-4 text-center lg:text-left sticky top-28">
-            <span class="text-blue-600 text-xs font-bold uppercase tracking-wider block">Have Questions?</span>
-            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
-              Frequently Asked Questions
-            </h2>
-            <div class="h-1 w-12 bg-blue-600 mx-auto lg:mx-0 rounded-full"></div>
-            <p class="text-slate-500 text-sm leading-relaxed max-w-sm mx-auto lg:mx-0">
-              Can't find the answer you're looking for? Feel free to ask our team directly via WhatsApp or Email.
-            </p>
-          </div>
-
-          {/* KOLOM KANAN: LIST AKORDEON FAQ */}
-          <div class="lg:col-span-8 space-y-4">
-            {faqs.map((faq) => (
-              <details class="group/faq bg-white rounded-xl border border-slate-100 shadow-sm transition-all duration-300 [&:has(details[open])]:border-blue-100 [&:has(details[open])]:shadow-md">
-                <summary class="list-none flex items-center justify-between cursor-pointer p-5 text-sm md:text-base font-bold text-slate-800 hover:text-blue-600 select-none transition-colors outline-none [&::-webkit-details-marker]:hidden">
-                  <span class="pr-4">{faq.q}</span>
-                  {/* Ikon plus (+) kustom yang akan berubah jadi minus (-) saat terbuka */}
-                  <div class="w-6 h-6 rounded-full bg-slate-50 group-hover/faq:bg-blue-50 text-slate-400 group-open/faq:text-blue-600 flex items-center justify-center shrink-0 transition-all">
-                    <svg class="w-3.5 h-3.5 transform transition-transform duration-300 group-open/faq:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path class="group-open/faq:hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"></path>
-                      <path class="hidden group-open/faq:block" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M20 12H4"></path>
-                    </svg>
-                  </div>
-                </summary>
-                <div class="px-5 pb-5 pt-1 text-xs md:text-sm text-slate-600 leading-relaxed border-t border-slate-50 animate-[fadeIn_0.25s_ease-out]">
-                  <p>{faq.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-
+          <button 
+            class="faq-toggle w-full text-left px-6 py-5 md:px-8 md:py-6 flex items-center justify-between gap-4 hover:bg-neutral-50/50 transition-colors focus:outline-none"
+            aria-expanded="false"
+          >
+            <span class="text-lg font-bold text-neutral-900 md:text-xl transition-colors group-hover:text-blue-600">
+  {faq.question}
+</span>
+            <span class="faq-icon text-2xl text-blue-600 font-medium transition-transform duration-300 select-none shrink-0">+</span>
+          </button>
+          
+          <div class="faq-content max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out bg-neutral-50/30">
+  {/* PERBAIKAN UTAMA: Kita samakan px-6 md:px-8 agar sejajar dengan tombol di atasnya, serta rapikan pt dan pb */}
+  <div class="px-6 pb-6 md:px-8 md:pb-8 text-base md:text-lg text-neutral-600 border-t border-neutral-100 pt-5 leading-relaxed">
+    <p>{faq.answer}</p>
+  </div>
+</div>
+          
         </div>
-      </section>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function initFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const toggleBtn = item.querySelector('.faq-toggle');
+      const content = item.querySelector('.faq-content') as HTMLElement;
+      const icon = item.querySelector('.faq-icon');
+
+      if (!toggleBtn || !content || !icon) return;
+
+      toggleBtn.addEventListener('click', () => {
+        const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+        
+        // 1. Tutup semua FAQ lain yang sedang terbuka (Efek Accordion Tunggal)
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            const otherBtn = otherItem.querySelector('.faq-toggle');
+            const otherContent = otherItem.querySelector('.faq-content') as HTMLElement;
+            const otherIcon = otherItem.querySelector('.faq-icon');
+            
+            if (otherBtn && otherContent && otherIcon) {
+              otherBtn.setAttribute('aria-expanded', 'false');
+              otherContent.style.maxHeight = '0';
+              otherContent.style.opacity = '0';
+              otherIcon.textContent = '+';
+              otherIcon.style.transform = 'rotate(0deg)';
+              otherItem.classList.remove('border-blue-500', 'shadow-md');
+            }
+          }
+        });
+
+        // 2. Toggle status item yang di-klik
+        if (isExpanded) {
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          content.style.maxHeight = '0';
+          content.style.opacity = '0';
+          icon.textContent = '+';
+          icon.style.transform = 'rotate(0deg)';
+          item.classList.remove('border-blue-500', 'shadow-md');
+        } else {
+          toggleBtn.setAttribute('aria-expanded', 'true');
+          // Isi maxHeight secara dinamis berdasarkan tinggi asli konten teksnya
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.opacity = '1';
+          icon.textContent = '−'; // Berubah jadi minus murni
+          item.classList.add('border-blue-500', 'shadow-md');
+        }
+      });
+    });
+  }
+
+  // Jalankan fungsi saat halaman pertama kali dimuat
+  document.addEventListener('DOMContentLoaded', initFAQ);
+  // Antisipasi jika Astro menggunakan ViewTransitions
+  document.addEventListener('astro:page-load', initFAQ);
+</script>
 
       {/* 5. CALL TO ACTION (DOUBLE BUTTON WA + EMAIL) */}
 	  <section id="contact-cta" class="text-center bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-3xl p-12 shadow-xl shadow-blue-600/10">
