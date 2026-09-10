@@ -1,7 +1,7 @@
-# Design Direction: Borobudur Vacation
+# Design Direction: YK Tour Driver
 
 ## 1. Identity & Character
-- **Product**: Borobudur Vacation (Private Tours & Car Rental in Yogyakarta & Central Java)
+- **Product**: YK Tour Driver (Private Tours & Car Rental in Yogyakarta & Central Java)
 - **Target Audience**: International travelers, couples, families, and culture enthusiasts seeking authentic, reliable, and comfortable private journeys in Central Java.
 - **Visual Personality**: Warm, culturally grounded, serene, and premium editorial travel. Evokes the peaceful dawn over Borobudur's stupas, warm stone terraces, and Indonesian hospitality.
 - **Anti-Slop Posture**: Explicitly rejects generic tech-SaaS tropes (no blue-purple gradients, no neon buttons, no capsule pill badges with dots, no emoji decoration, no 3-card copy-paste uniformity).
