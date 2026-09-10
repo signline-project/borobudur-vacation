@@ -217,10 +217,10 @@ const faqs = [
     <meta property="og:description" content={metaDescription} />
     <meta property="og:type" content="website" />
     
-    <!-- Google Fonts: Playfair Display for editorial headers & Plus Jakarta Sans for UI readability -->
+    <!-- Google Fonts: Quicksand for friendly vacation headers & Plus Jakarta Sans for UI readability -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
   </head>  
 
   <body class="bg-[#FAF8F5] text-stone-900 antialiased font-sans-ui selection:bg-[#A84820]/20 selection:text-stone-900">
@@ -231,7 +231,7 @@ const faqs = [
         
         <!-- Brand Logo / Typographic Wordmark -->
         <a href="#" class="group inline-flex flex-col focus-visible:ring-2 focus-visible:ring-[#A84820] rounded-lg p-1">
-          <span class="font-serif-display text-2xl font-bold text-stone-950 tracking-tight group-hover:text-[#A84820] transition-colors">
+          <span class="font-heading text-2xl font-bold text-stone-950 tracking-tight group-hover:text-[#A84820] transition-colors">
             {brandName}
           </span>
           <span class="text-[11px] uppercase tracking-widest text-stone-700 font-semibold">
@@ -337,7 +337,7 @@ const faqs = [
               Private Tours & Driver Hire Yogyakarta
             </div>
 
-            <h1 class="font-serif-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-white">
+            <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-white">
               Discover Borobudur & Java with Personal Local Guidance
             </h1>
 
@@ -372,7 +372,7 @@ const faqs = [
           <span class="text-[#A84820] text-xs font-extrabold uppercase tracking-widest block mb-2">
             Curated Itineraries
           </span>
-          <h2 class="font-serif-display text-3xl sm:text-4xl font-bold text-stone-950 tracking-tight mb-3">
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-stone-950 tracking-tight mb-3">
             Handcrafted Private Tour Packages
           </h2>
           <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
@@ -401,7 +401,7 @@ const faqs = [
 
                 <!-- Tour Content -->
                 <div class="p-6">
-                  <h3 class="font-serif-display text-xl font-bold text-stone-950 mb-2 leading-snug">
+                  <h3 class="font-heading text-xl font-bold text-stone-950 mb-2 leading-snug">
                     {tour.title}
                   </h3>
                   <p class="text-stone-600 text-xs sm:text-sm mb-4 leading-relaxed">
@@ -472,7 +472,7 @@ const faqs = [
           <span class="text-[#A84820] text-xs font-extrabold uppercase tracking-widest block mb-2">
             Comfortable Fleet
           </span>
-          <h2 class="font-serif-display text-3xl sm:text-4xl font-bold text-stone-950 tracking-tight mb-3">
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-stone-950 tracking-tight mb-3">
             Private Car Rental with Driver
           </h2>
           <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
@@ -500,7 +500,7 @@ const faqs = [
 
                 <!-- Vehicle Details -->
                 <div class="p-5">
-                  <h3 class="font-serif-display text-lg font-bold text-stone-950 mb-1">
+                  <h3 class="font-heading text-lg font-bold text-stone-950 mb-1">
                     {rental.unit}
                   </h3>
                   
@@ -557,7 +557,7 @@ const faqs = [
               <span class="text-[#E07A5F] text-xs font-bold uppercase tracking-widest block">
                 The Borobudur Vacation Difference
               </span>
-              <h2 class="font-serif-display text-3xl sm:text-4xl font-bold tracking-tight leading-tight text-white">
+              <h2 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight leading-tight text-white">
                 Thoughtfully Crafted Travel Experiences
               </h2>
               <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
@@ -572,7 +572,7 @@ const faqs = [
                     <span class="text-[10px] font-bold uppercase tracking-wider text-[#E07A5F] block">
                       {val.tag}
                     </span>
-                    <h3 class="font-serif-display text-lg font-bold text-white">
+                    <h3 class="font-heading text-lg font-bold text-white">
                       {val.title}
                     </h3>
                     <p class="text-stone-300 text-xs sm:text-sm leading-relaxed">
@@ -595,7 +595,7 @@ const faqs = [
           <span class="text-[#A84820] text-xs font-extrabold uppercase tracking-widest block mb-2">
             Clear & Simple Process
           </span>
-          <h2 class="font-serif-display text-3xl sm:text-4xl font-bold text-stone-950 tracking-tight mb-3">
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-stone-950 tracking-tight mb-3">
             How Your Trip is Arranged
           </h2>
           <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
@@ -607,10 +607,10 @@ const faqs = [
           {steps.map((item) => (
             <div class="bg-white p-6 rounded-xl border border-stone-200/90 shadow-sm flex flex-col justify-between">
               <div class="space-y-3">
-                <span class="font-serif-display text-2xl font-black text-[#A84820] block">
+                <span class="font-heading text-2xl font-black text-[#A84820] block">
                   {item.number}
                 </span>
-                <h3 class="font-serif-display text-lg font-bold text-stone-950">
+                <h3 class="font-heading text-lg font-bold text-stone-950">
                   {item.title}
                 </h3>
                 <p class="text-stone-600 text-xs sm:text-sm leading-relaxed">
@@ -630,7 +630,7 @@ const faqs = [
           <span class="text-[#A84820] text-xs font-extrabold uppercase tracking-widest block mb-2">
             Got Questions?
           </span>
-          <h2 class="font-serif-display text-3xl sm:text-4xl font-bold text-stone-950 tracking-tight mb-3">
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-stone-950 tracking-tight mb-3">
             Frequently Asked Questions
           </h2>
           <p class="text-stone-600 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
@@ -648,7 +648,7 @@ const faqs = [
                 aria-expanded="false"
                 aria-controls={`faq-answer-${index}`}
               >
-                <span class="font-serif-display text-base sm:text-lg font-bold text-stone-950 pr-2">
+                <span class="font-heading text-base sm:text-lg font-bold text-stone-950 pr-2">
                   {faq.question}
                 </span>
                 <!-- Clean Accessible SVG toggle indicator -->
@@ -685,7 +685,7 @@ const faqs = [
               Direct Local Communication
             </span>
 
-            <h2 class="font-serif-display text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
               Ready to Plan Your Yogyakarta Journey?
             </h2>
 
@@ -731,7 +731,7 @@ const faqs = [
         
         <!-- Brand Summary -->
         <div class="space-y-3">
-          <span class="font-serif-display text-xl font-bold text-white tracking-tight block">
+          <span class="font-heading text-xl font-bold text-white tracking-tight block">
             {brandName}
           </span>
           <p class="text-stone-400 text-xs sm:text-sm leading-relaxed max-w-sm">

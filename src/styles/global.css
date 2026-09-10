@@ -2,7 +2,7 @@
 
 @layer base {
   :root {
-    --font-serif: 'Playfair Display', Georgia, Cambria, serif;
+    --font-display: 'Quicksand', system-ui, -apple-system, sans-serif;
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   }
 
@@ -19,8 +19,13 @@
   }
 }
 
+.font-heading {
+  font-family: 'Quicksand', system-ui, -apple-system, sans-serif;
+}
+
+/* Backward-compatible class mapped to Quicksand */
 .font-serif-display {
-  font-family: 'Playfair Display', Georgia, Cambria, serif;
+  font-family: 'Quicksand', system-ui, -apple-system, sans-serif;
 }
 
 .font-sans-ui {

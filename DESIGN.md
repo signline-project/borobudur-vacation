@@ -15,8 +15,8 @@
 - **Border / Hairline**: `#E7E2DA`
 
 ## 3. Typography
-- **Headings / Display**: `Playfair Display`, serif — conveys historic timelessness, cultural elegance, and editorial polish.
-- **Body & UI**: `Plus Jakarta Sans`, sans-serif — ensures high legibility on all screen sizes, clean metrics, and human touch.
+- **Headings / Display**: `Quicksand` (weights 500, 600, 700), sans-serif with open, rounded geometry — conveys an inviting, sunny vacation atmosphere, warm friendliness, and maximum title legibility on all mobile viewports without stiff serif clutter.
+- **Body & UI**: `Plus Jakarta Sans` (weights 400, 500, 600, 700), geometric sans-serif — ensures high legibility on itineraries, vehicle technical specs, price tags, and buttons.
 
 ## 4. Dials (Antislop Part 3)
 - **ENERGY: 2 (Balanced)**: Confident, inviting editorial presence without hyperactive sales shouting.
@@ -25,6 +25,6 @@
 
 ## 5. Decision Rationale (R-31)
 - **Why Warm Stone & Terracotta?**: Reflects the actual volcanic stone of Borobudur and the golden dawn skies, eliminating cold SaaS tech blues.
-- **Why Playfair Display + Plus Jakarta Sans?**: Matches luxury heritage travel publications (e.g., Conde Nast Traveler) while keeping booking details crystal clear.
+- **Why Quicksand + Plus Jakarta Sans?**: Quicksand delivers the friendly, warm vacation warmth for all headers, while Plus Jakarta Sans guarantees 100% crystal-clear readability for travel logistics, inclusions, and prices.
 - **Why Direct WhatsApp Actions on Cards?**: Tourists want immediate confirmation without having to remember package names or re-type details.
 
