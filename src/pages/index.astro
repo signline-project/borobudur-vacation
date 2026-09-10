@@ -1,72 +1,83 @@
 ---
-// WAJIB DI SINI: Astro akan langsung memasak Tailwind v4 Anda dengan sempurna
 import '../styles/global.css';
 
 const brandName = "Borobudur Vacation";
 
-// VARIABEL SEO UNTUK HOMEPAGE
-const metaTitle = "Borobudur Vacation | Private Tours & Car Rental Yogyakarta";
-const metaDescription = "Explore Borobudur & Prambanan with English-speaking drivers. Private tours, sunrise trips, and car rental with driver in Yogyakarta. Book now!";
+// SEO Metadata
+const metaTitle = "Borobudur Vacation | Private Tours & Car Rental in Yogyakarta";
+const metaDescription = "Experience Borobudur and Prambanan with expert English-speaking drivers. Private cultural tours, sunrise trips, and dependable car rental in Yogyakarta.";
 
 const tours = [
   {
+    id: "borobudur-sunrise",
     title: "Borobudur Sunrise Tour",
-    tagline: "See the magical sunrise over the world’s largest Buddhist temple.",
-    description: "Start your day early and witness the golden morning light shining over Borobudur and the surrounding hills. After exploring the temple’s reliefs, we can continue to visit Pawon and Mendut temples nearby.",
-    price: "Inquire Price",
+    category: "Cultural Highlight",
+    tagline: "Witness the peaceful dawn over the world's largest Buddhist sanctuary.",
+    description: "Depart early from your hotel to catch the first golden morning light bathing the stupas of Borobudur and the Menoreh hills. Explore the ancient stone reliefs with peaceful morning serenity, followed by visits to nearby Pawon and Mendut temples.",
+    price: "Inquire for Quote",
     image: "/images/borobudur-sunrise.jpg",
-    included: "Private car + English-speaking driver, entrance ticket, hotel pick-up & drop-off",
-    duration: "4–5 hours (starting around 4:00 AM)",
-    waLink: "https://api.whatsapp.com/send?phone=628123456789&text=Hello,%20I'm%20interested%20in%20the%20*Borobudur%20Sunrise%20Tour*."
+    included: "Private air-conditioned car, English-speaking driver, temple entry tickets, hotel pick-up and drop-off",
+    duration: "4 to 5 hours (Early morning departure around 4:00 AM)",
+    waLink: "https://api.whatsapp.com/send?phone=628123456789&text=Hello,%20I'm%20interested%20in%20booking%20the%20*Borobudur%20Sunrise%20Tour*."
   },
   {
+    id: "borobudur-prambanan",
     title: "Borobudur & Prambanan Full-Day Tour",
-    tagline: "Two UNESCO World Heritage Sites in one day.",
-    description: "Begin your journey at Borobudur Temple in the morning, then continue to Prambanan Temple in the afternoon. This is the perfect tour for culture and history lovers. Optional stop at Sultan’s Palace (Kraton) or Batik workshop on the way.",
-    price: "Inquire Price",
+    category: "UNESCO Heritage",
+    tagline: "Two world heritage masterpieces in one seamless private excursion.",
+    description: "Begin your journey at Borobudur Temple in the fresh morning air, then journey across Yogyakarta to the towering Hindu spires of Prambanan. Includes an optional stop at the Sultan Palace (Kraton) or traditional batik craft studio along the route.",
+    price: "Inquire for Quote",
     image: "/images/prambanan.jpg",
-    included: "Private car + driver, entrance tickets, hotel pick-up & drop-off",
-    duration: "8–10 hours",
-    waLink: "https://api.whatsapp.com/send?phone=628123456789&text=Hello,%20I'm%20interested%20in%20the%20*Borobudur%20and%20Prambanan%20Full-Day%20Tour*."
+    included: "Private car with English-speaking driver, entrance admissions, fuel, parking fees, hotel transfers",
+    duration: "8 to 10 hours (Flexible start from 7:30 AM)",
+    waLink: "https://api.whatsapp.com/send?phone=628123456789&text=Hello,%20I'm%20interested%20in%20booking%20the%20*Borobudur%20and%20Prambanan%20Full-Day%20Tour*."
   },
   {
-    title: "Merapi Jeep Adventure & Borobudur",
-    tagline: "A mix of culture and adventure.",
-    description: "Combine your Borobudur tour with a thrilling 4x4 jeep ride around Mount Merapi. Explore volcanic landscapes, bunker ruins, and see how the local communities live in the shadow of an active volcano.",
-    price: "Inquire Price",
+    id: "merapi-jeep-borobudur",
+    title: "Merapi 4x4 Jeep Adventure & Borobudur",
+    category: "Heritage & Adventure",
+    tagline: "A thrilling blend of ancient heritage and volcanic exploration.",
+    description: "Pair your morning cultural immersion at Borobudur with an exhilarating open-top 4x4 jeep expedition around Mount Merapi. Traverse historic lava streams, visit the underground bunker ruins, and witness life on the slopes of Java's most active volcano.",
+    price: "Inquire for Quote",
     image: "/images/merapi.jpg",
-    included: "Private car + driver, jeep rental, entrance tickets",
-    duration: "Full day",
-    waLink: "https://api.whatsapp.com/send?phone=628123456789&text=Hello,%20I'm%20interested%20in%20the%20*Merapi%20Jeep%20Adventure%20and%20Borobudur*."
+    included: "Private transport, 4x4 Merapi Jeep rental with local driver, entrance tickets, mineral water",
+    duration: "Full day (Approx. 8 hours)",
+    waLink: "https://api.whatsapp.com/send?phone=628123456789&text=Hello,%20I'm%20interested%20in%20booking%20the%20*Merapi%20Jeep%20Adventure%20and%20Borobudur*."
   },
   {
-    title: "Jomblang Cave & Prambanan Tour",
-    tagline: "Adventure underground and cultural discovery.",
-    description: "Descend into Jomblang Cave and witness the famous “heavenly light.” After lunch, head to Prambanan Temple for an afternoon exploration. This tour is ideal for adventure seekers who also love history.",
-    price: "Inquire Price",
+    id: "jomblang-prambanan",
+    title: "Jomblang Cave & Prambanan Temple",
+    category: "Nature & Wonder",
+    tagline: "Rappel into subterranean caverns and marvel at the light of heaven.",
+    description: "Descend 60 meters underground into Jomblang Cave using certified vertical caving gear to witness the legendary sunbeam illumination. Enjoy a local boxed lunch before heading back to Yogyakarta for a leisurely afternoon at Prambanan Temple.",
+    price: "Inquire for Quote",
     image: "/images/jomblang.jpg",
-    included: "Private car + driver, caving equipment, guide, lunch, Prambanan ticket",
-    duration: "Full day (start at 7:00 AM)",
-    waLink: "https://api.whatsapp.com/send?phone=628123456789&text=Hello,%20I'm%20interested%20in%20the%20*Jomblang%20Cave%20and%20Prambanan%20Tour*."
+    included: "Private transport with driver, complete caving gear and cave guides, boxed lunch, Prambanan ticket",
+    duration: "Full day (Starts at 6:30 AM to catch cave slot)",
+    waLink: "https://api.whatsapp.com/send?phone=628123456789&text=Hello,%20I'm%20interested%20in%20booking%20the%20*Jomblang%20Cave%20and%20Prambanan%20Tour*."
   },
   {
-    title: "Yogyakarta City Tour",
-    tagline: "Discover the cultural heart of Yogyakarta.",
-    description: "Visit the Sultan’s Palace (Kraton), Taman Sari Water Castle, batik workshops, and Malioboro Street. A relaxing day exploring Jogja’s traditions, history, and local life.",
-    price: "Inquire Price",
+    id: "yogyakarta-city-tour",
+    title: "Yogyakarta Royal Heritage City Tour",
+    category: "Culture & Living Traditions",
+    tagline: "Delve into the royal palaces, historic water castles, and artisan quarters.",
+    description: "Uncover the living heart of Javanese culture. Visit the Sultan's Palace (Kraton), stroll through the fragrant courtyards of Taman Sari Water Castle, watch master batik craftsmen, and explore historical Kotagede silver workshops at your own pace.",
+    price: "Inquire for Quote",
     image: "/images/jogja.jpg",
-    included: "Private car + driver, entrance tickets, hotel pick-up & drop-off",
-    duration: "Half-day or Full day (flexible)",
-    waLink: "https://api.whatsapp.com/send?phone=628123456789&text=Hello,%20I'm%20interested%20in%20the%20*Yogyakarta%20City%20Tour*."
+    included: "Private vehicle, experienced English-speaking driver, entry admissions, hotel pick-up and drop-off",
+    duration: "6 to 8 hours (Customizable start time)",
+    waLink: "https://api.whatsapp.com/send?phone=628123456789&text=Hello,%20I'm%20interested%20in%20booking%20the%20*Yogyakarta%20City%20Tour*."
   },
   {
-    title: "Bromo & Ijen Overland Tour",
-    tagline: "From Yogyakarta to East Java’s famous volcanoes.",
-    description: "For those with more time, we offer multi-day trips to Mount Bromo and Ijen Crater. Experience the breathtaking sunrise over Bromo and the magical blue flames at Ijen before continuing to Bali or returning to Yogya.",
-    price: "Inquire Price",
+    id: "bromo-ijen-overland",
+    title: "Bromo & Ijen Crater Volcano Overland",
+    category: "Multi-Day Expedition",
+    tagline: "Journey across East Java's dramatic volcanic landscapes to Bali.",
+    description: "For adventurous explorers with multiple days, embark on an overland journey from Yogyakarta across East Java. Stand above the Sea of Sand for sunrise over Mount Bromo, and hike Mount Ijen by night to observe the rare electric-blue sulfur fires before continuing to Bali or returning to Yogyakarta.",
+    price: "Inquire for Quote",
     image: "/images/bromo.jpg",
-    included: "Transport, accommodation, entrance fees, local guide",
-    duration: "3–5 days (custom itinerary available)",
+    included: "Private long-distance vehicle, dedicated driver, hotel accommodations, 4x4 Bromo jeep, local mountain guides",
+    duration: "3 to 4 days (Tailored route options available)",
     waLink: "https://api.whatsapp.com/send?phone=628123456789&text=Hello,%20I'm%20interested%20in%20the%20*Bromo%20and%20Ijen%20Overland%20Tour*."
   }
 ];
@@ -74,82 +85,129 @@ const tours = [
 const rentals = [
   {
     unit: "Toyota Avanza",
-    specs: "5-6 Seats • AC • Manual/Automatic",
+    category: "Economical & Compact",
+    capacity: "Up to 5 Guests",
+    specs: "Air Conditioned • 2-3 Suitcases • Smooth & Reliable",
     price: "Rp 550.000",
-    period: "/ 12 Hours",
-    image: "/images/avanza.jpg"
+    period: "per 12 Hours",
+    included: "Vehicle, English-speaking driver, and fuel in Yogyakarta area",
+    image: "/images/avanza.jpg",
+    waLink: "https://api.whatsapp.com/send?phone=628123456789&text=Hello,%20I'd%20like%20to%20rent%20the%20*Toyota%20Avanza*%20with%20driver."
   },
   {
     unit: "Toyota Innova Reborn",
-    specs: "6-7 Seats • Double AC • Spacious Luxury",
+    category: "Most Popular Comfort",
+    capacity: "Up to 6 Guests",
+    specs: "Dual Blower AC • 3-4 Suitcases • Spacious Suspension",
     price: "Rp 850.000",
-    period: "/ 12 Hours",
-    image: "/images/innova.jpg"
+    period: "per 12 Hours",
+    included: "Vehicle, English-speaking driver, and fuel in Yogyakarta area",
+    image: "/images/innova.jpg",
+    waLink: "https://api.whatsapp.com/send?phone=628123456789&text=Hello,%20I'd%20like%20to%20rent%20the%20*Toyota%20Innova%20Reborn*%20with%20driver."
   },
   {
     unit: "Toyota Hiace Commuter",
-    specs: "14 Seats • Roof AC • Perfect for Groups",
+    category: "Group & Family Travel",
+    capacity: "Up to 14 Guests",
+    specs: "High Ceiling • Large Luggage Space • Dedicated Group Comfort",
     price: "Rp 1.200.000",
-    period: "/ 12 Hours",
-    image: "/images/hiace.jpg"
+    period: "per 12 Hours",
+    included: "Vehicle, professional driver, and fuel in Yogyakarta area",
+    image: "/images/hiace.jpg",
+    waLink: "https://api.whatsapp.com/send?phone=628123456789&text=Hello,%20I'd%20like%20to%20rent%20the%20*Toyota%20Hiace%20Commuter*%20with%20driver."
   },
   {
     unit: "Toyota Alphard",
-    specs: "5-6 VVIP Seats • Captain Seats • Premium Luxury",
+    category: "VIP Luxury",
+    capacity: "Up to 5 Guests",
+    specs: "Executive Captain Seats • Silent Cabin • Supreme Comfort",
     price: "Rp 3.000.000",
-    period: "/ 12 Hours",
-    image: "/images/alphard.jpg"
+    period: "per 12 Hours",
+    included: "VIP vehicle, professional chauffeur, and fuel in Yogyakarta area",
+    image: "/images/alphard.jpg",
+    waLink: "https://api.whatsapp.com/send?phone=628123456789&text=Hello,%20I'd%20like%20to%20rent%20the%20*Toyota%20Alphard*%20with%20driver."
   }
 ];
 
-const advantages = [
-  { title: "English-Speaking Drivers", desc: "Friendly, reliable, and knowledgeable throughout your journey." },
-  { title: "Private & Flexible Tours", desc: "No rushing around. Travel comfortably at your own desired pace." },
-  { title: "Transparent Prices", desc: "All-inclusive rates with absolutely zero hidden costs." },
-  { title: "Clean & Comfortable Cars", desc: "Well-maintained Toyota Avanza, Innova, Hiace, and premium SUVs." },
-  { title: "Trusted by International Travelers", desc: "Backed by excellent reviews and a high rate of repeat customers." }
+const values = [
+  {
+    title: "English-Speaking Local Drivers",
+    description: "Our drivers are friendly, punctual, and communicate clearly in English. They know the quietest times for temple visits and the best local dining spots.",
+    tag: "Communication"
+  },
+  {
+    title: "Fully Tailored & Private Itineraries",
+    description: "No shared tour buses or rigid schedules. You travel exclusively with your party and can adjust stops, photography breaks, and rest times as you like.",
+    tag: "Flexibility"
+  },
+  {
+    title: "Upfront & All-Inclusive Pricing",
+    description: "Every quotation clearly states vehicle, driver, fuel, and admissions. There are no sudden parking fees or unexpected surcharges during your trip.",
+    tag: "Transparency"
+  },
+  {
+    title: "Immaculate & Regularly Serviced Fleet",
+    description: "Every car is thoroughly cleaned, washed, and safety checked prior to each excursion, ensuring cool air-conditioning and total reliability.",
+    tag: "Safety & Comfort"
+  }
 ];
 
 const steps = [
-  { step: "01", title: "Inquire via WA or Email", desc: "Contact us easily through WhatsApp or Email to start the conversation." },
-  { step: "02", title: "Share Your Plan", desc: "Tell us your preferred travel dates, destinations, or customized requests." },
-  { step: "03", title: "Get Quotation & Confirm", desc: "Receive a quick, transparent price estimation and lock your trip schedule." },
-  { step: "04", title: "Relax & Enjoy!", desc: "Sit back, relax, and let us handle your unforgettable Yogyakarta vacation!" }
+  {
+    number: "01",
+    title: "Tell Us Your Travel Ideas",
+    text: "Contact us via WhatsApp or email with your preferred dates, party size, and places you would like to explore."
+  },
+  {
+    number: "02",
+    title: "Receive a Tailored Itinerary",
+    text: "We provide an optimized route schedule with clear pickup times, vehicle recommendation, and transparent pricing."
+  },
+  {
+    number: "03",
+    title: "Confirm Your Booking",
+    text: "Review and lock in your schedule with no tedious paperwork. We hold your vehicle and driver exclusively."
+  },
+  {
+    number: "04",
+    title: "Enjoy Your Private Journey",
+    text: "Your driver greets you on time at your hotel lobby. Sit back, take in the landscapes, and explore Yogyakarta comfortably."
+  }
 ];
 
 const faqs = [
   {
-    question: "How do I book a tour/rental with you?",
-    answer: "You can easily book by clicking our 'Contact Us' button, which connects directly to our WhatsApp. Our team will assist with your reservation and itinerary customizable instantly."
+    question: "How do I make a reservation with Borobudur Vacation?",
+    answer: "You can book directly by clicking our WhatsApp buttons or sending us an email. Let us know your travel dates, hotel location, and chosen tour or vehicle. We will reply promptly with full confirmation and schedule details."
   },
   {
-    question: "Can I combine Borobudur & Prambanan?",
-    answer: "Absolutely! We offer flexible full-day tours that combine both iconic UNESCO sites with comfortable private cars and expert local drivers."
+    question: "Can Borobudur and Prambanan be combined in a single day?",
+    answer: "Yes, this is our most requested tour package. Because Borobudur sits northwest of Yogyakarta and Prambanan sits to the east, our drivers plan the route to visit Borobudur during the calmer morning hours and Prambanan in the afternoon light."
   },
   {
     question: "What time does the Sunrise Tour start?",
-    answer: "The Borobudur Sunrise Tour typically starts with a hotel pick-up around 3:30 - 4:00 AM to catch the magical morning light from the best spots."
+    answer: "For the sunrise experience, hotel pick-up in Yogyakarta city typically occurs between 3:45 AM and 4:00 AM, allowing us to arrive at the viewing grounds before the first morning glow spreads across the temple valley."
   },
   {
-    question: "Are your drivers English-speaking?",
-    answer: "Yes, all our professional drivers are English-speaking local experts dedicated to making your journey comfortable and informative."
+    question: "Are your drivers fluent in English?",
+    answer: "Yes, all our primary drivers speak conversational and clear English. They assist with temple entry arrangements, recommend authentic local food, and provide helpful cultural context throughout your journey."
   },
   {
-    question: "What type of vehicles do you provide?",
-    answer: "We offer a modern fleet, including Toyota Avanza, Innova Reborn, Hiace, and premium Toyota Alphard, all well-maintained for your safety."
+    question: "What items are included in the private car rental?",
+    answer: "Our standard 12-hour car rental rate includes the vehicle, an English-speaking driver, fuel (petrol) within the Yogyakarta and Borobudur region, and hotel pick-up and drop-off."
   },
   {
-    question: "Is Yogyakarta safe for tourists?",
-    answer: "Yes, Yogyakarta is widely known as a friendly and safe city for international tourists. We still advise standard safety precautions, but overall, it's very welcoming."
+    question: "Is Yogyakarta a welcoming destination for international travelers?",
+    answer: "Yogyakarta is widely celebrated as one of Indonesia's most hospitable and safe cultural cities. Locals are warm and welcoming to visitors. Standard travel common sense applies, and our private drivers ensure peace of mind at every destination."
   }
 ];
-
 ---
 
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <title>{metaTitle}</title>
@@ -159,131 +217,219 @@ const faqs = [
     <meta property="og:description" content={metaDescription} />
     <meta property="og:type" content="website" />
     
+    <!-- Google Fonts: Playfair Display for editorial headers & Plus Jakarta Sans for UI readability -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <style is:global>
-      @import "../styles/global.css";
-      
-      body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   </head>  
 
-  <body class="bg-slate-50 text-slate-800 antialiased">
+  <body class="bg-[#FAF8F5] text-stone-900 antialiased font-sans-ui selection:bg-[#A84820]/20 selection:text-stone-900">
 
-    <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-100">
-      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <span class="text-xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent tracking-tight">
-          {brandName}
-        </span>
-        {/* MENU NAVIGASI BAHASA INGGRIS */}
-        <div class="hidden md:flex space-x-8 font-semibold text-slate-600 text-sm">
-          <a href="#paket" class="hover:text-blue-600 transition-colors">Tour Packages</a>
-          <a href="#rental" class="hover:text-blue-400 transition-colors">Car Rentals</a>
-          <a href="#why-choose-us" class="hover:text-blue-400 transition-colors">Why Choose Us</a>
-          <a href="#faq" class="hover:text-blue-400 transition-colors">FAQs</a>
-        </div>
-        <a href="#contact-cta" class="bg-slate-900 hover:bg-slate-800 text-white font-bold px-5 py-2.5 rounded-full text-xs transition-all shadow-sm">
-          Contact Us
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-stone-200/80 transition-shadow duration-300">
+      <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+        
+        <!-- Brand Logo / Typographic Wordmark -->
+        <a href="#" class="group inline-flex flex-col focus-visible:ring-2 focus-visible:ring-[#A84820] rounded-lg p-1">
+          <span class="font-serif-display text-2xl font-bold text-stone-950 tracking-tight group-hover:text-[#A84820] transition-colors">
+            {brandName}
+          </span>
+          <span class="text-[11px] uppercase tracking-widest text-stone-700 font-semibold">
+            Central Java Private Tours
+          </span>
         </a>
-      </div>
-    </nav>
 
-    <header class="relative bg-slate-900 text-white py-32 px-6 overflow-hidden min-h-[500px] flex items-center">
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-stone-700" aria-label="Main Navigation">
+          <a href="#paket" class="hover:text-[#A84820] transition-colors py-1">Tour Packages</a>
+          <a href="#rental" class="hover:text-[#A84820] transition-colors py-1">Car Rentals</a>
+          <a href="#why-choose-us" class="hover:text-[#A84820] transition-colors py-1">Why Choose Us</a>
+          <a href="#faq" class="hover:text-[#A84820] transition-colors py-1">FAQs</a>
+        </nav>
+
+        <!-- Desktop Action -->
+        <div class="hidden md:flex items-center">
+          <a 
+            href="#contact-cta" 
+            class="bg-stone-900 hover:bg-[#A84820] text-white font-semibold px-5 py-2.5 rounded-lg text-xs tracking-wide transition-all shadow-sm focus-visible:ring-2 focus-visible:ring-stone-900"
+          >
+            Plan Your Journey
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center">
+          <button 
+            id="mobile-menu-toggle"
+            type="button" 
+            class="p-2.5 rounded-lg text-stone-700 hover:text-stone-950 hover:bg-stone-100 transition-colors focus-visible:ring-2 focus-visible:ring-[#A84820]"
+            aria-expanded="false" 
+            aria-controls="mobile-menu"
+            aria-label="Toggle navigation menu"
+          >
+            <!-- Hamburger Icon (Default) -->
+            <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <!-- Close Icon (Hidden by default) -->
+            <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
       <div 
-  class="absolute inset-0 z-0 opacity-40 bg-cover bg-center" 
-  style={`background-image: url('${import.meta.env.BASE_URL}/images/hero-travel.jpg');`}
-></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-transparent z-10"></div>
-      
-      <div class="max-w-4xl mx-auto relative z-20 text-center md:text-left w-full">
-        <span class="inline-block bg-blue-500/20 text-blue-400 font-bold px-4 py-1.5 rounded-full text-xs tracking-wider uppercase mb-4 border border-blue-500/30">
-          Your Trusted Travel Partner
-        </span>
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight max-w-3xl">
-          Discover Borobudur, Prambanan & Central Java with Local Experts
-        </h1>
-        <p class="text-base md:text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed">
-          Comfortable cars, English-speaking drivers, and customized itineraries for your perfect holiday.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-          <a href="#paket" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-blue-600/30 transition-all text-center text-sm">
-            View Tour Packages
+        id="mobile-menu" 
+        class="hidden md:hidden border-t border-stone-200 bg-[#FAF8F5] px-6 py-6 transition-all duration-300 shadow-xl"
+        role="navigation"
+        aria-label="Mobile Navigation"
+      >
+        <div class="flex flex-col space-y-4">
+          <a href="#paket" class="mobile-nav-link text-base font-semibold text-stone-800 hover:text-[#A84820] py-2 border-b border-stone-100">
+            Tour Packages
           </a>
-          <a href="#rental" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-3.5 rounded-xl backdrop-blur-md transition-all text-center border border-white/20 text-sm">
-            Private Car Rentals
+          <a href="#rental" class="mobile-nav-link text-base font-semibold text-stone-800 hover:text-[#A84820] py-2 border-b border-stone-100">
+            Car Rentals
           </a>
+          <a href="#why-choose-us" class="mobile-nav-link text-base font-semibold text-stone-800 hover:text-[#A84820] py-2 border-b border-stone-100">
+            Why Choose Us
+          </a>
+          <a href="#faq" class="mobile-nav-link text-base font-semibold text-stone-800 hover:text-[#A84820] py-2 border-b border-stone-100">
+            Frequently Asked Questions
+          </a>
+          <div class="pt-2">
+            <a 
+              href="https://api.whatsapp.com/send?phone=628123456789&text=Hello%20Borobudur%20Vacation,%20I'd%20like%20to%20plan%20a%20private%20trip."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full bg-[#A84820] hover:bg-[#8F3B18] text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 text-sm shadow-sm"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.155.57 4.178 1.564 5.924l-1.664 6.08 6.223-1.633c1.705.932 3.666 1.469 5.877 1.469 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              <span>Chat via WhatsApp</span>
+            </a>
+          </div>
         </div>
       </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-6 py-20 space-y-32">
+    <main class="space-y-24 md:space-y-36 pb-20">
 
-      <section id="paket" class="scroll-mt-24">
-        <div class="max-w-2xl mx-auto text-center mb-16">
-          <span class="text-blue-600 text-xs font-bold uppercase tracking-wider block mb-2">Our Offerings</span>
-          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">Popular Tour Packages</h2>
-          <div class="h-1 w-16 bg-blue-600 mx-auto rounded-full mb-4"></div>
-          <p class="text-slate-500 text-sm md:text-base">
-            Handpicked premium experiences crafted for an unforgettable vacation in Yogyakarta and beyond.
+      <!-- HERO SECTION -->
+      <section class="relative bg-stone-950 text-white min-h-[580px] flex items-center overflow-hidden">
+        <!-- Background Image with Scrim -->
+        <div 
+          class="absolute inset-0 z-0 bg-cover bg-center opacity-45 transform scale-105 transition-transform duration-1000 ease-out" 
+          style={`background-image: url('${import.meta.env.BASE_URL}/images/hero-travel.jpg');`}
+          aria-hidden="true"
+        ></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-950/85 to-stone-900/40 z-10" aria-hidden="true"></div>
+
+        <div class="max-w-6xl mx-auto px-6 py-20 relative z-20 w-full">
+          <div class="max-w-3xl space-y-6">
+            
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-stone-900/90 border border-stone-700/80 text-stone-200 text-xs font-semibold tracking-wider uppercase">
+              <span class="w-2 h-2 rounded-full bg-[#E07A5F]"></span>
+              Private Tours & Driver Hire Yogyakarta
+            </div>
+
+            <h1 class="font-serif-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-white">
+              Discover Borobudur & Java with Personal Local Guidance
+            </h1>
+
+            <p class="text-stone-300 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
+              Private itineraries, dedicated air-conditioned cars, and friendly English-speaking local drivers. Travel comfortably at your own rhythm without crowded tour buses.
+            </p>
+
+            <div class="pt-4 flex flex-col sm:flex-row gap-4">
+              <a 
+                href="#paket" 
+                class="bg-[#A84820] hover:bg-[#8F3B18] text-white font-bold px-7 py-3.5 rounded-lg transition-colors text-center text-sm shadow-md focus-visible:ring-2 focus-visible:ring-white"
+              >
+                View Tour Packages
+              </a>
+              <a 
+                href="#rental" 
+                class="bg-stone-900/80 hover:bg-stone-800 text-white font-semibold px-7 py-3.5 rounded-lg border border-stone-700 transition-colors text-center text-sm focus-visible:ring-2 focus-visible:ring-white"
+              >
+                Private Car Rental
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 1. TOUR PACKAGES SECTION -->
+      <section id="paket" class="max-w-6xl mx-auto px-6 scroll-mt-28">
+        
+        <!-- Section Header -->
+        <div class="max-w-2xl mb-14">
+          <span class="text-[#A84820] text-xs font-extrabold uppercase tracking-widest block mb-2">
+            Curated Itineraries
+          </span>
+          <h2 class="font-serif-display text-3xl sm:text-4xl font-bold text-stone-950 tracking-tight mb-3">
+            Handcrafted Private Tour Packages
+          </h2>
+          <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+            Private day trips and multi-day explorations with guaranteed transparent inclusions and flexible departure hours.
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+        <!-- Tour Cards Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {tours.map((tour) => (
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-100 overflow-hidden flex flex-col justify-between transition-all duration-300 [&:has(details[open])]:shadow-xl [&:has(details[open])]:border-blue-100">
+            <article class="bg-white rounded-xl border border-stone-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between overflow-hidden">
               
               <div>
-                {/* AREA IMAGE */}
-                <div class="relative overflow-hidden h-52 bg-slate-200 shrink-0">
+                <!-- Tour Image -->
+                <div class="relative h-56 bg-stone-200 overflow-hidden">
                   <img 
-  src={`${import.meta.env.BASE_URL}${tour.image}`} 
-  alt={tour.title} 
-  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-/>
+                    src={`${import.meta.env.BASE_URL}${tour.image}`} 
+                    alt={tour.title} 
+                    loading="lazy"
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+                  />
+                  <span class="absolute top-3.5 left-3.5 bg-stone-950/85 text-stone-100 text-[11px] font-bold px-3 py-1 rounded tracking-wide backdrop-blur-sm">
+                    {tour.category}
+                  </span>
                 </div>
 
-                {/* AREA KONTEN UTAMA */}
+                <!-- Tour Content -->
                 <div class="p-6">
-                  <h3 class="text-lg font-bold text-slate-900 mb-1">
+                  <h3 class="font-serif-display text-xl font-bold text-stone-950 mb-2 leading-snug">
                     {tour.title}
                   </h3>
-                  <p class="text-blue-600 text-xs font-semibold tracking-wide mb-4">
+                  <p class="text-stone-600 text-xs sm:text-sm mb-4 leading-relaxed">
                     {tour.tagline}
                   </p>
 
-                  {/* AKORDEON DETAILS YANG SUDAH DIPERBAIKI UI/UX-NYA */}
-                  <details class="group/details border-t border-slate-100/80 pt-4">
-                    {/* Summary bersih, menyamar menjadi teks interaktif yang elegan */}
-                    <summary class="list-none flex items-center justify-between cursor-pointer text-xs font-bold text-slate-600 hover:text-blue-600 select-none transition-colors outline-none [&::-webkit-details-marker]:hidden">
-                      <span class="tracking-wide uppercase text-[11px] text-slate-400 group-hover/details:text-blue-600 transition-colors">
-                        View Itinerary & Details
-                      </span>
-                      {/* Ikon panah kustom yang akan berputar halus */}
-                      <svg class="w-4 h-4 text-slate-400 transition-transform duration-300 group-open/details:rotate-180 group-open/details:text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                  <!-- Accessible Accordion Details -->
+                  <details class="group/tour-details border-t border-stone-100 pt-3">
+                    <summary class="list-none flex items-center justify-between cursor-pointer py-1 text-xs font-bold text-[#A84820] hover:text-[#8F3B18] transition-colors focus-visible:ring-1 focus-visible:ring-[#A84820] rounded">
+                      <span class="uppercase tracking-wider text-[11px]">View Full Itinerary & Inclusions</span>
+                      <svg class="w-4 h-4 text-stone-500 transition-transform duration-200 group-open/tour-details:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                       </svg>
                     </summary>
-                    
-                    {/* PANEL INFORMASI (BERSIH, TANPA KOTAK ABU-ABU KAKU) */}
-                    <div class="mt-4 space-y-5 text-slate-600 text-xs md:text-sm border-l-2 border-blue-500 pl-4 py-0.5 animate-[fadeIn_0.3s_ease-out]">
-                      <p class="text-slate-600 leading-relaxed font-normal text-justify">
+
+                    <div class="mt-3 space-y-3.5 text-xs text-stone-700 bg-stone-50 p-3.5 rounded-lg border border-stone-200/70 animate-fadeIn">
+                      <p class="leading-relaxed">
                         {tour.description}
                       </p>
                       
-                      <div class="space-y-3 pt-3 border-t border-slate-100">
-                        <div class="flex flex-col gap-1">
-                          <span class="text-[10px] uppercase font-extrabold tracking-wider text-blue-600">✓ Included</span>
-                          <span class="text-slate-700 text-xs leading-relaxed font-medium">{tour.included}</span>
+                      <div class="space-y-2 pt-2 border-t border-stone-200/80">
+                        <div>
+                          <span class="font-bold text-stone-900 block text-[11px] uppercase tracking-wide">Included:</span>
+                          <span class="text-stone-600 leading-relaxed block">{tour.included}</span>
                         </div>
-                        <div class="flex flex-col gap-1">
-                          <span class="text-[10px] uppercase font-extrabold tracking-wider text-blue-600">⏱ Duration</span>
-                          <span class="text-slate-700 text-xs font-medium">{tour.duration}</span>
+                        <div>
+                          <span class="font-bold text-stone-900 block text-[11px] uppercase tracking-wide">Duration:</span>
+                          <span class="text-stone-600 block">{tour.duration}</span>
                         </div>
                       </div>
                     </div>
@@ -291,324 +437,460 @@ const faqs = [
                 </div>
               </div>
 
-              {/* AREA HARGA & ACTION BUTTON */}
-              <div class="px-6 pb-6 pt-4 bg-slate-50/50 border-t border-slate-100 flex items-center justify-between shrink-0">
+              <!-- Price & Direct Action -->
+              <div class="px-6 py-4 bg-stone-50/80 border-t border-stone-100 flex items-center justify-between gap-3">
                 <div>
-                  <span class="text-[9px] text-slate-400 block uppercase font-extrabold tracking-wider">Starting From</span>
-                  <span class="text-base font-black text-blue-600 tracking-tight">{tour.price}</span>
+                  <span class="text-[10px] uppercase font-bold text-stone-500 tracking-wider block">Price Estimation</span>
+                  <span class="text-sm font-bold text-stone-900">{tour.price}</span>
                 </div>
-                <a href="#contact-cta" class="bg-blue-600 hover:bg-indigo-600 text-white font-bold px-5 py-2.5 rounded-xl text-xs transition-all shadow-md shadow-blue-600/10 hover:shadow-indigo-600/20">
-                  Book Now
+                
+                <!-- Direct WhatsApp Booking with prefilled tour title -->
+                <a 
+                  href={tour.waLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="bg-[#2D4A3E] hover:bg-stone-900 text-white font-semibold text-xs px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5 focus-visible:ring-2 focus-visible:ring-[#2D4A3E]"
+                  aria-label={`Inquire about ${tour.title} on WhatsApp`}
+                >
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.155.57 4.178 1.564 5.924l-1.664 6.08 6.223-1.633c1.705.932 3.666 1.469 5.877 1.469 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  <span>Inquire Now</span>
                 </a>
               </div>
 
-            </div>
+            </article>
           ))}
         </div>
+
       </section>
 
-      {/* 2. LAYANAN RENTAL MOBIL ANDA SEBELUMNYA TETAP DI SINI */}
-	  <section id="rental" class="scroll-mt-24">
-  <div class="max-w-2xl mx-auto text-center mb-16">
-    <span class="text-blue-600 text-xs font-bold uppercase tracking-wider block mb-2">Transport Services</span>
-    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-      Private Car Rentals
-    </h2>
-    <div class="h-1 w-16 bg-blue-600 mx-auto rounded-full mb-4"></div>
-    <p class="text-slate-500 text-sm md:text-base">
-      Modern, immaculate, and fully air-conditioned vehicles accompanied by professional drivers for a seamless journey.
-    </p>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
-          {rentals.map((rental) => (
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-100 overflow-hidden flex flex-col transition-all duration-300 group hover:-translate-y-1 h-full">
-              
-              {/* AREA FOTO MOBIL */}
-              <div class="relative overflow-hidden h-40 bg-slate-100">
-                <img 
-                  src={`${import.meta.env.BASE_URL}${rental.image}`} 
-                  alt={rental.unit} 
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                />
-              </div>
-              
-              {/* DETAIL MOBIL (Hapus flex-grow agar space atas mengunci padat) */}
-              <div class="p-5 pb-0">
-                <h3 class="text-base font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors line-clamp-1">
-                  {rental.unit}
-                </h3>
-                <span class="text-[10px] font-semibold text-blue-600 bg-blue-50 py-0.5 px-2 rounded-md inline-block mb-1">
-                  {rental.specs}
-                </span>
-              </div>
-              
-              {/* BAGIAN BAWAH: HARGA & TOMBOL AKSI (Ditambah mt-auto untuk menarik space dari atas) */}
-              <div class="px-5 pb-5 mt-auto">
-                <div class="border-t border-dashed border-slate-200 pt-2 mb-4">
-                  <span class="text-[9px] text-slate-400 block uppercase font-extrabold tracking-wider">Rental Rates</span>
-                  <div class="flex items-baseline gap-0.5">
-                    <span class="text-lg font-black text-slate-900 tracking-tight">{rental.price}</span>
-                    <span class="text-[11px] text-slate-500 font-medium">{rental.period}</span>
-                  </div>
-                </div>
-
-                <a href="#contact-cta" class="bg-slate-900 hover:bg-blue-600 text-white font-bold py-2.5 rounded-xl text-center text-xs transition-all block w-full uppercase tracking-wider">
-                  Book Car
-                </a>
-              </div>
-
-            </div>
-          ))}
-  </div>
-</section>
-      
-      {/* 3. WHY CHOOSE US (MENGGUNAKAN DATA BOROBUDUR VACATION) */}
-	  <section id="why-choose-us" class="bg-slate-900 text-white rounded-3xl p-8 md:p-16 relative overflow-hidden shadow-xl">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <!-- 2. CAR RENTALS SECTION -->
+      <section id="rental" class="max-w-6xl mx-auto px-6 scroll-mt-28">
         
-        <div class="grid lg:grid-cols-12 gap-12 items-center relative z-10">
-          <div class="lg:col-span-5 space-y-4 text-center lg:text-left">
-            <span class="text-blue-400 text-xs font-bold uppercase tracking-wider block">Why Borobudur Vacation?</span>
-            <h2 class="text-3xl md:text-4xl font-black tracking-tight leading-tight">
-              We Craft Perfect Holiday Experiences
-            </h2>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Your comfort and safety are our top priorities. Here is why hundreds of international travelers choose us as their trusted local partner in Yogyakarta.
-            </p>
-          </div>
-          
-          <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
-            {advantages.map((adv) => (
-              <div class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-white/20 transition-all">
-                <div class="flex items-start gap-3">
-                  <div class="text-emerald-400 mt-0.5 text-lg shrink-0">✅</div>
-                  <div>
-                    <h4 class="font-bold text-white text-sm md:text-base mb-1">{adv.title}</h4>
-                    <p class="text-slate-400 text-xs leading-relaxed">{adv.desc}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. HOW IT WORKS */}
-	  <section id="how-it-works" class="scroll-mt-24">
-        <div class="max-w-2xl mx-auto text-center mb-16">
-          <span class="text-blue-600 text-xs font-bold uppercase tracking-wider block mb-2">Plan Your Trip</span>
-          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">How It Works</h2>
-          <div class="h-1 w-16 bg-blue-600 mx-auto rounded-full"></div>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-          <div class="hidden lg:block absolute top-16 left-20 right-20 h-0.5 bg-slate-200/60 z-0"></div>
-          
-          {steps.map((item) => (
-            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm relative z-10 flex flex-col items-center text-center group hover:border-blue-200 transition-all duration-300">
-              <div class="relative mb-6">
-                <span class="absolute -top-6 -left-10 text-6xl font-black text-slate-100/80 select-none tracking-tighter group-hover:text-blue-50 transition-colors duration-300 z-0">{item.step}</span>
-                <div class="w-12 h-12 bg-blue-600 text-white font-extrabold flex items-center justify-center rounded-full text-sm shadow-md shadow-blue-600/20 relative z-10 group-hover:scale-110 transition-transform">
-                  {parseInt(item.step)}
-                </div>
-              </div>
-              <h3 class="text-base font-bold text-slate-900 mb-2 mt-2 group-hover:text-blue-600 transition-colors">{item.title}</h3>
-              <p class="text-slate-500 text-xs leading-relaxed">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="faqs" class="py-20 bg-neutral-50">
-  <div class="container mx-auto px-6 max-w-4xl">
-    
-    <div class="text-center mb-12">
-      <p class="text-blue-600 font-bold tracking-wider text-sm uppercase mb-2">Have Questions?</p>
-      <h2 class="text-4xl md:text-5xl font-extrabold text-neutral-900 mb-4">Frequently Asked Questions</h2>
-      <p class="text-lg text-neutral-600 max-w-2xl mx-auto">Can't find the answer? Contact our local experts instantly via WhatsApp for personalized assistance.</p>
-    </div>
-
-    <div class="space-y-4">
-      {faqs.map((faq, index) => (
-        <div class="faq-item bg-white rounded-2xl border border-neutral-200/80 shadow-sm overflow-hidden transition-all duration-300">
-          
-          <button 
-            class="faq-toggle w-full text-left px-6 py-5 md:px-8 md:py-6 flex items-center justify-between gap-4 hover:bg-neutral-50/50 transition-colors focus:outline-none"
-            aria-expanded="false"
-          >
-            <span class="text-lg font-bold text-neutral-900 md:text-xl transition-colors group-hover:text-blue-600">
-  {faq.question}
-</span>
-            <span class="faq-icon text-2xl text-blue-600 font-medium transition-transform duration-300 select-none shrink-0">+</span>
-          </button>
-          
-          <div class="faq-content max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out bg-neutral-50/30">
-  {/* PERBAIKAN UTAMA: Kita samakan px-6 md:px-8 agar sejajar dengan tombol di atasnya, serta rapikan pt dan pb */}
-  <div class="px-6 pb-6 md:px-8 md:pb-8 text-base md:text-lg text-neutral-600 border-t border-neutral-100 pt-5 leading-relaxed">
-    <p>{faq.answer}</p>
-  </div>
-</div>
-          
-        </div>
-      ))}
-    </div>
-
-  </div>
-</section>
-
-<script>
-  function initFAQ() {
-    const faqItems = document.querySelectorAll('.faq-item');
-
-    faqItems.forEach(item => {
-      const toggleBtn = item.querySelector('.faq-toggle');
-      const content = item.querySelector('.faq-content') as HTMLElement;
-      const icon = item.querySelector('.faq-icon');
-
-      if (!toggleBtn || !content || !icon) return;
-
-      toggleBtn.addEventListener('click', () => {
-        const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-        
-        // 1. Tutup semua FAQ lain yang sedang terbuka (Efek Accordion Tunggal)
-        faqItems.forEach(otherItem => {
-          if (otherItem !== item) {
-            const otherBtn = otherItem.querySelector('.faq-toggle');
-            const otherContent = otherItem.querySelector('.faq-content') as HTMLElement;
-            const otherIcon = otherItem.querySelector('.faq-icon');
-            
-            if (otherBtn && otherContent && otherIcon) {
-              otherBtn.setAttribute('aria-expanded', 'false');
-              otherContent.style.maxHeight = '0';
-              otherContent.style.opacity = '0';
-              otherIcon.textContent = '+';
-              otherIcon.style.transform = 'rotate(0deg)';
-              otherItem.classList.remove('border-blue-500', 'shadow-md');
-            }
-          }
-        });
-
-        // 2. Toggle status item yang di-klik
-        if (isExpanded) {
-          toggleBtn.setAttribute('aria-expanded', 'false');
-          content.style.maxHeight = '0';
-          content.style.opacity = '0';
-          icon.textContent = '+';
-          icon.style.transform = 'rotate(0deg)';
-          item.classList.remove('border-blue-500', 'shadow-md');
-        } else {
-          toggleBtn.setAttribute('aria-expanded', 'true');
-          // Isi maxHeight secara dinamis berdasarkan tinggi asli konten teksnya
-          content.style.maxHeight = content.scrollHeight + 'px';
-          content.style.opacity = '1';
-          icon.textContent = '−'; // Berubah jadi minus murni
-          item.classList.add('border-blue-500', 'shadow-md');
-        }
-      });
-    });
-  }
-
-  // Jalankan fungsi saat halaman pertama kali dimuat
-  document.addEventListener('DOMContentLoaded', initFAQ);
-  // Antisipasi jika Astro menggunakan ViewTransitions
-  document.addEventListener('astro:page-load', initFAQ);
-</script>
-
-      {/* 5. CALL TO ACTION (DOUBLE BUTTON WA + EMAIL) */}
-	  <section id="contact-cta" class="text-center bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-3xl p-12 shadow-xl shadow-blue-600/10">
-        <div class="max-w-2xl mx-auto space-y-6">
-          <h2 class="text-2xl md:text-4xl font-black tracking-tight">
-            Ready to book your Borobudur Vacation?
+        <div class="max-w-2xl mb-14">
+          <span class="text-[#A84820] text-xs font-extrabold uppercase tracking-widest block mb-2">
+            Comfortable Fleet
+          </span>
+          <h2 class="font-serif-display text-3xl sm:text-4xl font-bold text-stone-950 tracking-tight mb-3">
+            Private Car Rental with Driver
           </h2>
-          <p class="text-blue-100 text-sm md:text-base max-w-md mx-auto leading-relaxed">
-            Contact us today for a fast response, transparent quotation, and hassle-free easy booking.
+          <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+            Travel stress-free with our verified fleet. All rentals include an experienced English-speaking driver, vehicle maintenance, and fuel within the Yogyakarta region.
           </p>
-          <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
-            {/* WHATSAPP BUTTON */}
-            <a href="https://api.whatsapp.com/send?phone=628123456789&text=Hello%20Borobudur%20Vacation,%20I'd%20like%20to%20plan%20a%20trip." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 text-white font-bold px-8 py-3.5 rounded-xl transition-all shadow-md inline-flex items-center justify-center gap-2">
-              💬 Message via WhatsApp
-            </a>
-            {/* EMAIL BUTTON */}
-            <a href="mailto:info@borobudurvacation.com?subject=Inquiry%20Borobudur%20Vacation" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-900 font-bold px-8 py-3.5 rounded-xl transition-all shadow-md inline-flex items-center justify-center gap-2">
-              ✉️ Send an Email
-            </a>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {rentals.map((rental) => (
+            <div class="bg-white rounded-xl border border-stone-200/90 shadow-sm flex flex-col justify-between overflow-hidden hover:border-stone-400 transition-colors">
+              
+              <div>
+                <!-- Vehicle Image -->
+                <div class="relative h-44 bg-stone-100 overflow-hidden">
+                  <img 
+                    src={`${import.meta.env.BASE_URL}${rental.image}`} 
+                    alt={rental.unit} 
+                    loading="lazy"
+                    class="w-full h-full object-cover" 
+                  />
+                  <span class="absolute top-3 left-3 bg-stone-900/80 text-white text-[10px] font-bold px-2.5 py-0.5 rounded">
+                    {rental.category}
+                  </span>
+                </div>
+
+                <!-- Vehicle Details -->
+                <div class="p-5">
+                  <h3 class="font-serif-display text-lg font-bold text-stone-950 mb-1">
+                    {rental.unit}
+                  </h3>
+                  
+                  <div class="mb-3">
+                    <span class="inline-block text-[11px] font-bold text-[#2D4A3E] bg-[#2D4A3E]/10 px-2 py-0.5 rounded">
+                      {rental.capacity}
+                    </span>
+                  </div>
+
+                  <p class="text-xs text-stone-600 leading-relaxed mb-3">
+                    {rental.specs}
+                  </p>
+                  
+                  <div class="text-[11px] text-stone-500 pt-2 border-t border-stone-100">
+                    <span class="font-semibold text-stone-700">Includes:</span> {rental.included}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Rates & Action Button -->
+              <div class="p-5 pt-0 mt-auto">
+                <div class="py-3 border-t border-stone-100 mb-3">
+                  <span class="text-[10px] uppercase font-bold text-stone-500 tracking-wider block">All-Inclusive Rate</span>
+                  <div class="flex items-baseline gap-1">
+                    <span class="text-xl font-extrabold text-stone-950 tracking-tight">{rental.price}</span>
+                    <span class="text-xs text-stone-600 font-medium">{rental.period}</span>
+                  </div>
+                </div>
+
+                <a 
+                  href={rental.waLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="w-full bg-stone-900 hover:bg-[#A84820] text-white font-bold py-2.5 px-3 rounded-lg text-center text-xs transition-colors block focus-visible:ring-2 focus-visible:ring-stone-900"
+                  aria-label={`Book ${rental.unit} via WhatsApp`}
+                >
+                  Book This Vehicle
+                </a>
+              </div>
+
+            </div>
+          ))}
+        </div>
+
+      </section>
+
+      <!-- 3. WHY CHOOSE US -->
+      <section id="why-choose-us" class="max-w-6xl mx-auto px-6 scroll-mt-28">
+        <div class="bg-stone-900 text-stone-100 rounded-2xl p-8 sm:p-12 lg:p-16 relative overflow-hidden">
+          
+          <div class="grid lg:grid-cols-12 gap-10 items-start">
+            
+            <div class="lg:col-span-5 space-y-4">
+              <span class="text-[#E07A5F] text-xs font-bold uppercase tracking-widest block">
+                The Borobudur Vacation Difference
+              </span>
+              <h2 class="font-serif-display text-3xl sm:text-4xl font-bold tracking-tight leading-tight text-white">
+                Thoughtfully Crafted Travel Experiences
+              </h2>
+              <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+                We believe travel should feel personal, relaxed, and safe. Here is why international travelers choose our team for their Central Java adventures.
+              </p>
+            </div>
+
+            <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+              {values.map((val) => (
+                <div class="bg-stone-800/80 p-6 rounded-xl border border-stone-700/70 flex flex-col justify-between">
+                  <div class="space-y-2">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-[#E07A5F] block">
+                      {val.tag}
+                    </span>
+                    <h3 class="font-serif-display text-lg font-bold text-white">
+                      {val.title}
+                    </h3>
+                    <p class="text-stone-300 text-xs sm:text-sm leading-relaxed">
+                      {val.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
           </div>
+
         </div>
       </section>
 
+      <!-- 4. HOW IT WORKS / BOOKING PROCESS -->
+      <section id="how-it-works" class="max-w-6xl mx-auto px-6 scroll-mt-28">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="text-[#A84820] text-xs font-extrabold uppercase tracking-widest block mb-2">
+            Clear & Simple Process
+          </span>
+          <h2 class="font-serif-display text-3xl sm:text-4xl font-bold text-stone-950 tracking-tight mb-3">
+            How Your Trip is Arranged
+          </h2>
+          <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+            Booking your private tour or car rental takes only a few quick exchanges on WhatsApp or email.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((item) => (
+            <div class="bg-white p-6 rounded-xl border border-stone-200/90 shadow-sm flex flex-col justify-between">
+              <div class="space-y-3">
+                <span class="font-serif-display text-2xl font-black text-[#A84820] block">
+                  {item.number}
+                </span>
+                <h3 class="font-serif-display text-lg font-bold text-stone-950">
+                  {item.title}
+                </h3>
+                <p class="text-stone-600 text-xs sm:text-sm leading-relaxed">
+                  {item.text}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </section>
+
+      <!-- 5. FAQS SECTION (ACCESSIBLE ACCORDION) -->
+      <section id="faq" class="max-w-4xl mx-auto px-6 scroll-mt-28">
+        
+        <div class="text-center mb-12">
+          <span class="text-[#A84820] text-xs font-extrabold uppercase tracking-widest block mb-2">
+            Got Questions?
+          </span>
+          <h2 class="font-serif-display text-3xl sm:text-4xl font-bold text-stone-950 tracking-tight mb-3">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-stone-600 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
+            Everything you need to know about tour itineraries, temple timings, drivers, and reservations.
+          </p>
+        </div>
+
+        <div class="space-y-3.5">
+          {faqs.map((faq, index) => (
+            <div class="faq-item bg-white rounded-xl border border-stone-200/90 shadow-sm overflow-hidden transition-all duration-200">
+              
+              <button 
+                id={`faq-toggle-${index}`}
+                class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between gap-4 hover:bg-stone-50/70 transition-colors focus-visible:ring-2 focus-visible:ring-[#A84820] focus-visible:outline-none"
+                aria-expanded="false"
+                aria-controls={`faq-answer-${index}`}
+              >
+                <span class="font-serif-display text-base sm:text-lg font-bold text-stone-950 pr-2">
+                  {faq.question}
+                </span>
+                <!-- Clean Accessible SVG toggle indicator -->
+                <span class="w-7 h-7 rounded-full bg-stone-100 flex items-center justify-center text-stone-700 shrink-0">
+                  <svg class="faq-icon w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                  </svg>
+                </span>
+              </button>
+              
+              <div 
+                id={`faq-answer-${index}`} 
+                class="faq-content max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out bg-stone-50/40"
+                role="region"
+                aria-labelledby={`faq-toggle-${index}`}
+              >
+                <div class="px-6 pb-6 text-sm text-stone-700 leading-relaxed border-t border-stone-100 pt-4">
+                  <p>{faq.answer}</p>
+                </div>
+              </div>
+              
+            </div>
+          ))}
+        </div>
+
+      </section>
+
+      <!-- 6. CONTACT CTA BANNER -->
+      <section id="contact-cta" class="max-w-6xl mx-auto px-6 scroll-mt-28">
+        <div class="bg-[#292524] text-white rounded-2xl p-8 sm:p-14 text-center border border-stone-800 shadow-lg">
+          <div class="max-w-2xl mx-auto space-y-6">
+            
+            <span class="text-[#E07A5F] text-xs font-bold uppercase tracking-widest block">
+              Direct Local Communication
+            </span>
+
+            <h2 class="font-serif-display text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
+              Ready to Plan Your Yogyakarta Journey?
+            </h2>
+
+            <p class="text-stone-300 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
+              Send us a message with your dates and questions. We will reply promptly with route advice and transparent quotations.
+            </p>
+
+            <div class="pt-2 flex flex-col sm:flex-row justify-center items-center gap-4">
+              <!-- WhatsApp CTA -->
+              <a 
+                href="https://api.whatsapp.com/send?phone=628123456789&text=Hello%20Borobudur%20Vacation,%20I'd%20like%20to%20plan%20a%20private%20trip." 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="w-full sm:w-auto bg-[#2D4A3E] hover:bg-[#1e342b] text-white font-bold px-7 py-3.5 rounded-lg transition-colors inline-flex items-center justify-center gap-2 text-sm shadow-md focus-visible:ring-2 focus-visible:ring-white"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.155.57 4.178 1.564 5.924l-1.664 6.08 6.223-1.633c1.705.932 3.666 1.469 5.877 1.469 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                <span>Message on WhatsApp</span>
+              </a>
+
+              <!-- Email CTA -->
+              <a 
+                href="mailto:info@borobudurvacation.com?subject=Trip%20Inquiry%20Borobudur%20Vacation" 
+                class="w-full sm:w-auto bg-stone-100 hover:bg-white text-stone-900 font-bold px-7 py-3.5 rounded-lg transition-colors inline-flex items-center justify-center gap-2 text-sm shadow-md focus-visible:ring-2 focus-visible:ring-white"
+              >
+                <svg class="w-4 h-4 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span>Send an Email</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
     </main>
-    
-    <footer class="bg-slate-950 text-slate-400 pt-16 pb-12 border-t border-slate-900">
-      <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-sm">
+
+    <!-- FOOTER -->
+    <footer class="bg-[#1C1917] text-stone-300 pt-16 pb-12 border-t border-stone-800 text-sm">
+      <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
         
-        {/* KOLOM 1: BRAND LOGO & BIO */}
-        <div class="space-y-4">
-          <span class="text-xl font-black text-white tracking-tight block">
+        <!-- Brand Summary -->
+        <div class="space-y-3">
+          <span class="font-serif-display text-xl font-bold text-white tracking-tight block">
             {brandName}
           </span>
-          <p class="text-slate-500 text-xs leading-relaxed max-w-sm">
-            Your premium travel companion in Yogyakarta. We specialize in crafting tailor-made itineraries, private tours, and providing high-quality car rentals for international travelers.
+          <p class="text-stone-400 text-xs sm:text-sm leading-relaxed max-w-sm">
+            Tailor-made private day excursions, UNESCO temple tours, and dependable car rentals with courteous English-speaking drivers throughout Central Java.
           </p>
         </div>
 
-        {/* KOLOM 2: QUICK NAVIGATION LINKS */}
-        <div class="space-y-4">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Quick Links</h4>
-          <ul class="space-y-2.5 text-xs font-medium">
-            <li><a href="#paket" class="hover:text-blue-400 transition-colors">Tour Packages</a></li>
-            <li><a href="#rental" class="hover:text-blue-400 transition-colors">Car Rentals</a></li>
-            <li><a href="#why-choose-us" class="hover:text-blue-400 transition-colors">Why Choose Us</a></li>
-            <li><a href="#faq" class="hover:text-blue-400 transition-colors">FAQs</a></li>
+        <!-- Navigation Links -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-stone-200">
+            Navigation
+          </h4>
+          <ul class="space-y-2 text-xs sm:text-sm font-medium">
+            <li><a href="#paket" class="hover:text-[#E07A5F] text-stone-300 transition-colors">Tour Packages</a></li>
+            <li><a href="#rental" class="hover:text-[#E07A5F] text-stone-300 transition-colors">Car Rentals</a></li>
+            <li><a href="#why-choose-us" class="hover:text-[#E07A5F] text-stone-300 transition-colors">Why Choose Us</a></li>
+            <li><a href="#faq" class="hover:text-[#E07A5F] text-stone-300 transition-colors">FAQs</a></li>
           </ul>
         </div>
 
-        {/* KOLOM 3: CONTACT & SOCIAL MEDIA (FONT AWESOME SVG) */}
-        <div class="space-y-4">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Get In Touch</h4>
-          <ul class="space-y-3.5 text-xs font-medium">
-            
-            {/* WHATSAPP (FONT AWESOME ICON) */}
-            <li class="flex items-center gap-3 group">
-              <svg class="w-4 h-4 text-slate-500 group-hover:text-emerald-400 transition-colors shrink-0" fill="currentColor" viewBox="0 0 448 512">
-                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-117zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-              </svg>
-              <a href="https://api.whatsapp.com/send?phone=628123456789&text=Hello%20Borobudur%20Vacation!" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">
-                +62 812-3456-789
+        <!-- Contact Information -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-stone-200">
+            Contact & Inquiries
+          </h4>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-stone-300">
+            <li>
+              <a 
+                href="https://api.whatsapp.com/send?phone=628123456789&text=Hello%20Borobudur%20Vacation!" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="hover:text-emerald-400 transition-colors inline-flex items-center gap-2"
+              >
+                <svg class="w-4 h-4 text-stone-400 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.155.57 4.178 1.564 5.924l-1.664 6.08 6.223-1.633c1.705.932 3.666 1.469 5.877 1.469 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                <span>+62 812-3456-789</span>
               </a>
             </li>
-
-            {/* EMAIL (FONT AWESOME ICON) */}
-            <li class="flex items-center gap-3 group">
-              <svg class="w-4 h-4 text-slate-500 group-hover:text-blue-400 transition-colors shrink-0" fill="currentColor" viewBox="0 0 512 512">
-                <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V176z"/>
-              </svg>
-              <a href="mailto:hello@borobudurvacation.com" class="hover:text-blue-400 transition-colors">
-                hello@borobudurvacation.com
+            <li>
+              <a 
+                href="mailto:info@borobudurvacation.com" 
+                class="hover:text-[#C26138] transition-colors inline-flex items-center gap-2"
+              >
+                <svg class="w-4 h-4 text-stone-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span>info@borobudurvacation.com</span>
               </a>
             </li>
-
-            {/* INSTAGRAM (FONT AWESOME ICON) */}
-            <li class="flex items-center gap-3 group border-t border-slate-900 pt-4 mt-2">
-              <svg class="w-4 h-4 text-slate-500 group-hover:text-pink-400 transition-colors shrink-0" fill="currentColor" viewBox="0 0 448 512">
-                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8c14.8 0 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM402.4 344.2c-7.8 19.5-22.9 34.5-42.4 42.4-29.2 11.6-98.6 8.9-136 8.9s-106.9 2.7-136-8.9c-19.5-7.9-34.5-22.9-42.4-42.4-11.6-29.2-8.9-98.6-8.9-136s-2.7-106.9 8.9-136c7.9-19.5 22.9-34.5 42.4-42.4 29.2-11.6 98.6-8.9 136-8.9s106.9-2.7 136 8.9c19.5 7.9 34.5 22.9 42.4 42.4 11.6 29.2 8.9 98.6 8.9 136s2.7 106.9-8.9 136z"/>
-              </svg>
-              <a href="https://instagram.com/borobudurvacation" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition-colors text-slate-300">
-                @borobudurvacation
-              </a>
+            <li class="pt-1">
+              <span class="text-stone-400 text-xs block">Operating Office: Yogyakarta, Central Java, Indonesia</span>
             </li>
-
           </ul>
         </div>
 
       </div>
 
-      {/* BARIS HAK CIPTA */}
-      <div class="max-w-6xl mx-auto px-6 mt-12 pt-6 border-t border-slate-900 text-center text-[11px] text-slate-600">
-        <p>&copy; {new Date().getFullYear()} {brandName}. All rights reserved.</p>
+      <div class="max-w-6xl mx-auto px-6 mt-12 pt-6 border-t border-stone-800 text-center text-xs text-stone-400">
+        <p>&copy; {new Date().getFullYear()} {brandName}. All rights reserved. Crafted with care for Central Java travelers.</p>
       </div>
     </footer>
+
+    <!-- INTERACTIVE SCRIPTS: ACCESSIBLE MOBILE MENU & ACCORDION -->
+    <script>
+      function initInteractiveComponents() {
+        // 1. Mobile Menu Drawer
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+        if (menuToggle && mobileMenu && hamburgerIcon && closeIcon) {
+          const toggleMenu = (open?: boolean) => {
+            const isCurrentlyOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            const shouldOpen = open !== undefined ? open : !isCurrentlyOpen;
+
+            menuToggle.setAttribute('aria-expanded', String(shouldOpen));
+            if (shouldOpen) {
+              mobileMenu.classList.remove('hidden');
+              hamburgerIcon.classList.add('hidden');
+              closeIcon.classList.remove('hidden');
+            } else {
+              mobileMenu.classList.add('hidden');
+              hamburgerIcon.classList.remove('hidden');
+              closeIcon.classList.add('hidden');
+            }
+          };
+
+          menuToggle.addEventListener('click', () => toggleMenu());
+
+          // Close on link click
+          navLinks.forEach(link => {
+            link.addEventListener('click', () => toggleMenu(false));
+          });
+
+          // Close on Escape key
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+              toggleMenu(false);
+              menuToggle.focus();
+            }
+          });
+        }
+
+        // 2. Accessible FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach((item) => {
+          const toggleBtn = item.querySelector('.faq-toggle');
+          const content = item.querySelector('.faq-content') as HTMLElement;
+          const icon = item.querySelector('.faq-icon');
+
+          if (!toggleBtn || !content || !icon) return;
+
+          toggleBtn.addEventListener('click', () => {
+            const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+
+            // Close other FAQs
+            faqItems.forEach((otherItem) => {
+              if (otherItem !== item) {
+                const otherBtn = otherItem.querySelector('.faq-toggle');
+                const otherContent = otherItem.querySelector('.faq-content') as HTMLElement;
+                const otherIcon = otherItem.querySelector('.faq-icon');
+
+                if (otherBtn && otherContent && otherIcon) {
+                  otherBtn.setAttribute('aria-expanded', 'false');
+                  otherContent.style.maxHeight = '0';
+                  otherContent.style.opacity = '0';
+                  otherIcon.classList.remove('rotate-45');
+                }
+              }
+            });
+
+            // Toggle current FAQ
+            if (isExpanded) {
+              toggleBtn.setAttribute('aria-expanded', 'false');
+              content.style.maxHeight = '0';
+              content.style.opacity = '0';
+              icon.classList.remove('rotate-45');
+            } else {
+              toggleBtn.setAttribute('aria-expanded', 'true');
+              content.style.maxHeight = content.scrollHeight + 'px';
+              content.style.opacity = '1';
+              icon.classList.add('rotate-45');
+            }
+          });
+        });
+      }
+
+      // Initialize on load and on Astro page transition
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initInteractiveComponents);
+      } else {
+        initInteractiveComponents();
+      }
+      document.addEventListener('astro:page-load', initInteractiveComponents);
+    </script>
 
   </body>
 </html>
